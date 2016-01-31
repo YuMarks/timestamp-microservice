@@ -1,4 +1,3 @@
-//var http = require('http');
 var express = require('express');
 var app = express();
 var moment = require('moment');
@@ -14,7 +13,6 @@ function convertNatural(date){
 }
 function convertUnix(date){
     date = new Date(date);
-    console.log(date);
     if(date != "Invalid Date"){
     dateObj.natural = moment(date).format("MMMM D, YYYY");
     }else{
@@ -27,15 +25,13 @@ function convertUnix(date){
 }
 app.get('/:query', function(req, res) {
   var date = req.params.query;
-  if(/[a-z]/i.test(date)){
-    convertUnix(date);
-    
-  }else{
+    if(/[a-z]/i.test(date)){
+        convertUnix(date);
+    }else{
       convertNatural(date);
-  }
-   var final = JSON.stringify(dateObj);
-   var html = "<p>" + final + "</p>";
-    res.end(html);
-    
-});
+    }
+  var final = JSON.stringify(dateObj);
+  var html = "<p>" + final + "</p>";
+  res.end(html);
+  });
 app.listen(port);
