@@ -11,9 +11,9 @@ API Basejump: Timestamp microservice
 
 Example usage:
 
-https://timestamp-microservice-ymarks.c9users.io/December%2015,%202015
+https://secret-retreat-33645.herokuapp.com/December%2015,%202015
 
-https://timestamp-microservice-ymarks.c9users.io/1450137600
+https://secret-retreat-33645.herokuapp.com/1450137600
 
 Example output:
 
